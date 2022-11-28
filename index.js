@@ -7,6 +7,8 @@ import router from "./routes/index.js";
 dotenv.config();
 const app = express();
 
+const port = 3001;
+
 try {
     await db.authenticate();
     console.log('Database Connected...');
@@ -19,4 +21,4 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(router);
 
-app.listen(5000, ()=> console.log('Server running at port 5000'));
+app.listen(port)
